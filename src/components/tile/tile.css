@@ -48,7 +48,7 @@
 
 .articlePic {
     width: 100%;
-    height: 40rem;
+    height: 100%;
     object-fit: cover;
     float: left;
     border-radius: 1rem;
@@ -67,3 +67,26 @@
 .details p {
     margin-right: rem;
 }
+
+@media only screen and (max-device-width: 480px) {
+    * {
+      font-size: 8px;
+    }
+    .articleContainer {
+        flex-direction: column;
+    }
+    .article {
+        order: 1;
+    }
+    .votes {
+        display: flex;
+        flex: 1 0 auto;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+    }
+    .voteButton {
+        margin: 0 1rem;
+
+    }
+  }
