@@ -1,0 +1,68 @@
+.articleContainer {
+    display: flex;
+    width: 90%;
+    margin: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1rem;
+}
+
+.votes {
+    flex: 15%;
+}
+
+.voteButton {
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: relative;
+}
+
+.voteButton:active {
+    top: 2px;
+} 
+
+.voteImg {
+    height: 100%;
+    width: 100%;
+}
+
+.upVote {
+    margin-top: 1rem;
+}
+
+.voteCount {
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.article {
+    padding: 0 2rem;
+    flex: 85%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.articlePic {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    float: left;
+    border-radius: 1rem;
+}
+
+.line {
+    padding: 0;
+    margin: 2rem 0 0 0;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details p {
+    margin-right: rem;
+}

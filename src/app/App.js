@@ -2,12 +2,14 @@ import React from 'react';
 import logo from '../logo.svg';
 import { Counter } from '../features/counter/Counter';
 import { TitleBar } from '../components/titleBar/TitleBar.js';
+import { Articles } from '../components/articles/Articles.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <TitleBar />
+      <Articles />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
