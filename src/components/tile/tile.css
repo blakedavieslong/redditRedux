@@ -48,8 +48,9 @@
 
 .articlePic {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-height: 50rem;
+    height: auto;
+    object-fit: contain;
     float: left;
     border-radius: 1rem;
 }
@@ -64,8 +65,9 @@
     justify-content: space-between;
 }
 
-.details p {
-    margin-right: rem;
+.author {
+    color: #FE4501;
+    font-weight: 700;
 }
 
 @media only screen and (max-device-width: 480px) {
