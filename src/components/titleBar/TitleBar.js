@@ -15,7 +15,7 @@ export function TitleBar() {
 
   useEffect(() => {
     setDisplayList(subReddit);
-  }, [dispatch]);
+  }, [dispatch, subReddit]);
   
   const handleSubmit = (e) => {
     e.preventDefault();
