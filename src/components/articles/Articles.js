@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './articles.css';
+import styles from './articles.module.css';
 import { Tile } from '../tile/Tile';
 import { pullPopular, selectAllArticles } from '../../features/reddit/redditSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +20,7 @@ export function Articles() {
     )
   }
   return (
-    <div className='articleList'>
+    <div className={styles.articleList}>
       {articles.map((article, index) => {
         let previewImage;
         if (article.data.preview && article.data.preview.images) {
@@ -28,7 +28,6 @@ export function Articles() {
         } else {
           previewImage = article.data.thumbnail;
         }
-        
         
         return <Tile 
           key={index}

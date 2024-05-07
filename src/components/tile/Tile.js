@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './tile.css';
+import styles from './tile.module.css';
 import upButton from '../../resources/pictures/upArrow.jpg';
 import downButton from '../../resources/pictures/downArrow.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,22 +23,22 @@ export function Tile({title, votes, comments, author, imgSrc, created, subReddit
 
 
   return (
-    <div className='articleContainer'>
-      <div className='votes column'>
-        <button className='voteButton upVote'>
-          <img className='voteImg' src={upButton} alt='Upvote button'/>
+    <div className={styles.articleContainer}>
+      <div className={`${styles.votes} ${styles.column}`}>
+        <button className={`${styles.voteButton} ${styles.upVote}`}>
+          <img className={styles.voteImg} src={upButton} alt='Upvote button'/>
         </button>
-        <h3 className='voteCount'>{Math.round(votes/100)/10}k</h3>
-        <button className='voteButton'>
-          <img className='voteImg' src={downButton} alt='Downvote button'/>
+        <h3 className={styles.voteCount}>{Math.round(votes/100)/10}k</h3>
+        <button className={styles.voteButton}>
+          <img className={styles.voteImg} src={downButton} alt='Downvote button'/>
         </button>
       </div>
-      <div className='article column'>
+      <div className={`${styles.article} ${styles.column}`}>
         <h2>{title}</h2>
         {displayImage}
-        <hr className='line'/>
-        <span className='details'>
-          <p>Posted by <span className='author'>{author}</span> to r/{subReddit}</p>
+        <hr className={styles.line}/>
+        <span className={styles.details}>
+          <p>Posted by <span className={styles.author}>{author}</span> to r/{subReddit}</p>
           <p>{moment.unix(created).fromNow()}</p>
           <p><FontAwesomeIcon icon={faComment} />{`  ${comments}`}</p>
         </span>
