@@ -26,6 +26,15 @@ export const searchReddit = createAsyncThunk(
   }
 );
 
+export const pullSubReddit = createAsyncThunk(
+  'reddit/pullSubReddit',
+  async (subReddit) => {
+    const response = await fetch(`https://www.reddit.com/r/${subReddit}.json?&raw_json=1`);
+    const json = await response.json();
+    return json;
+  }
+);
+
 export const redditSlice = createSlice({
   name: 'reddit',
   initialState,
@@ -59,6 +68,20 @@ export const redditSlice = createSlice({
         state.hasError = false;
         state.articles = action.payload.data.children;
         state.subReddit = `search for: ${action.meta.arg}`;
+      })
+      .addCase(pullSubReddit.pending, (state) => {
+        state.isLoading = true;
+        state.hasError = false;
+      })
+      .addCase(pullSubReddit.rejected, (state) => {
+        state.isLoading = false;
+        state.hasError = true;
+      })
+      .addCase(pullSubReddit.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.hasError = false;
+        state.articles = action.payload.data.children;
+        state.subReddit = `r/${action.meta.arg}`;
       })
   },
 });

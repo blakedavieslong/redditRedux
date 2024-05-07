@@ -22,11 +22,16 @@ export function Articles() {
   return (
     <div className={styles.articleList}>
       {articles.map((article, index) => {
-        let previewImage;
-        if (article.data.preview && article.data.preview.images) {
-          previewImage = article.data.preview.images[0].source.url;
+        let previewMedia;
+        let video = false;
+
+        if(article.data.is_video) {
+          video = true;
+          previewMedia = article.data.media.reddit_video.dash_url;
+        } else if (article.data.preview && article.data.preview.images) {
+          previewMedia = article.data.preview.images[0].source.url;
         } else {
-          previewImage = article.data.thumbnail;
+          previewMedia = article.data.thumbnail;
         }
         
         return <Tile 
@@ -35,9 +40,11 @@ export function Articles() {
           votes={article.data.score}
           author={article.data.author}
           comments={article.data.num_comments}
-          imgSrc={previewImage}
+          imgSrc={previewMedia}
           created={article.data.created}
           subReddit={article.data.subreddit}
+          picUrl={article.data.url}
+          is_video={video}
         />
       })}
     </div>

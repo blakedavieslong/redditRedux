@@ -5,18 +5,34 @@ import downButton from '../../resources/pictures/downArrow.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
+import DashVideoPlayer from '../dashVideo/DashVideoPlayer';
 
-export function Tile({title, votes, comments, author, imgSrc, created, subReddit}) {
+export function Tile({title, votes, comments, author, imgSrc, created, subReddit, picUrl, is_video}) {
   let displayImage;
 
-  if(imgSrc && imgSrc !== 'self' && imgSrc !== 'default' && imgSrc !== 'image') {
+  if(is_video) {
+    displayImage = 
+      <DashVideoPlayer src={imgSrc} />
+      /*<video
+        controls
+        src={imgSrc}
+      />*/
+  } else if(imgSrc && imgSrc !== 'self' && imgSrc !== 'default' && imgSrc !== 'image' && imgSrc !== 'nsfw') {
     displayImage = 
       <img
         className={styles.articlePic} 
         src={imgSrc}
         alt='placeholder text'
       />
-  } else {
+  } else if(picUrl && picUrl.substring(picUrl.length - 4) === 'jpeg') {
+    console.log(picUrl);
+    displayImage = 
+      <img
+        className={styles.articlePic} 
+        src={picUrl}
+        alt='placeholder text'
+      />
+  } else {  
     displayImage = <div></div>;
   }
   
