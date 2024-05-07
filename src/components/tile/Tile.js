@@ -12,7 +12,7 @@ export function Tile({title, votes, comments, author, imgSrc, created, subReddit
   if(imgSrc && imgSrc !== 'self' && imgSrc !== 'default' && imgSrc !== 'image') {
     displayImage = 
       <img
-        className='articlePic' 
+        className={styles.articlePic} 
         src={imgSrc}
         alt='placeholder text'
       />

@@ -11,7 +11,6 @@ const root = createRoot(container);
 
 root.render(
     <Provider store={store}>
-      <script src="https://kit.fontawesome.com/c99bdbec92.js" crossOrigin="anonymous"></script>
       <App />
     </Provider>
 );
