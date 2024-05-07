@@ -31,7 +31,7 @@ export function TitleBar() {
   return (
     <header className={styles.topBar}>
       <div className={styles.subReddit}>
-        <select onChange={handleChange}>
+        <select onChange={handleChange} aria-label='subRedditSelector'>
           <option value={displayList} >{displayList}</option>
           <option value="popular">r/popular</option>
           <option value="politics">r/politics</option>
@@ -58,8 +58,9 @@ export function TitleBar() {
             onChange={(e) => (setSearchValue(e.target.value))}
           />
           <button
-            id="searchButton"
+            id='searchButton'
             name='searchButton'
+            aria-label='searchButton'
             className={styles.searchButton}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>

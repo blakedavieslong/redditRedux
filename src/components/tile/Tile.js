@@ -40,7 +40,7 @@ export function Tile({title, votes, comments, author, imgSrc, created, subReddit
         <button className={`${styles.voteButton} ${styles.upVote}`}>
           <img className={styles.voteImg} src={upButton} alt='Upvote button'/>
         </button>
-        <h3 className={styles.voteCount}>{Math.round(votes/100)/10}k</h3>
+        <h2 className={styles.voteCount}>{Math.round(votes/100)/10}k</h2>
         <button className={styles.voteButton}>
           <img className={styles.voteImg} src={downButton} alt='Downvote button'/>
         </button>
