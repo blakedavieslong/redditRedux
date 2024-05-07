@@ -5,10 +5,11 @@
 .topBar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
     width: 100%;
     height: 3rem;
-    justify-content: center;
+    
     position: fixed;
     z-index: 999;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
@@ -22,4 +23,27 @@
 
 .highlight {
     color: #FE4501;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.subReddit {
+    margin-left: 1rem;
+}
+
+.search {
+    margin-right: 1rem;
+}
+
+.searchButton {
+    margin-left: 0.5rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+    * {
+        font-size: 8px;
+    }
 }

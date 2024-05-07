@@ -2,12 +2,11 @@ import React from 'react';
 import styles from './tile.css';
 import upButton from '../../resources/pictures/upArrow.jpg';
 import downButton from '../../resources/pictures/downArrow.jpg';
-import placeholderPic from '../../resources/pictures/placeholder.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 
-export function Tile({title, votes, comments, author, imgSrc, created}) {
+export function Tile({title, votes, comments, author, imgSrc, created, subReddit}) {
   let displayImage;
 
   if(imgSrc && imgSrc !== 'self' && imgSrc !== 'default' && imgSrc !== 'image') {
@@ -39,7 +38,7 @@ export function Tile({title, votes, comments, author, imgSrc, created}) {
         {displayImage}
         <hr className='line'/>
         <span className='details'>
-          <p>Posted by <span className='author'>{author}</span></p>
+          <p>Posted by <span className='author'>{author}</span> to r/{subReddit}</p>
           <p>{moment.unix(created).fromNow()}</p>
           <p><FontAwesomeIcon icon={faComment} />{`  ${comments}`}</p>
         </span>

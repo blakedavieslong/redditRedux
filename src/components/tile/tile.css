@@ -71,9 +71,6 @@
 }
 
 @media only screen and (max-device-width: 480px) {
-    * {
-      font-size: 8px;
-    }
     .articleContainer {
         flex-direction: column;
     }

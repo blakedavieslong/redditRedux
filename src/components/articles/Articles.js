@@ -23,7 +23,6 @@ export function Articles() {
     <div className='articleList'>
       {articles.map((article, index) => {
         let previewImage;
-//article.data.thumbnail && article.data.thumbnail !== 'self' && article.data.thumbnail !== 'default' && article.data.thumbnail !== 'image'
         if (article.data.preview && article.data.preview.images) {
           previewImage = article.data.preview.images[0].source.url;
         } else {
@@ -39,6 +38,7 @@ export function Articles() {
           comments={article.data.num_comments}
           imgSrc={previewImage}
           created={article.data.created}
+          subReddit={article.data.subreddit}
         />
       })}
     </div>
