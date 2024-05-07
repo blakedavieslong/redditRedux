@@ -4,6 +4,7 @@
     margin: 2rem 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1rem;
+    background-color: white;
 }
 
 .votes {
@@ -70,7 +71,7 @@
     font-weight: 700;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 550px) {
     .articleContainer {
         flex-direction: column;
     }

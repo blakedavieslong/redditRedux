@@ -13,10 +13,6 @@ export function Tile({title, votes, comments, author, imgSrc, created, subReddit
   if(is_video) {
     displayImage = 
       <DashVideoPlayer src={imgSrc} />
-      /*<video
-        controls
-        src={imgSrc}
-      />*/
   } else if(imgSrc && imgSrc !== 'self' && imgSrc !== 'default' && imgSrc !== 'image' && imgSrc !== 'nsfw') {
     displayImage = 
       <img
